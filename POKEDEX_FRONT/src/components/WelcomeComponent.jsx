@@ -55,7 +55,7 @@ const WelcomeComponent = () => {
             type='button'
             className='welcome-button welcome-button-secondary'
             onClick={handleSkip}
-            disabled={isLastStep}
+            
           >
             Skip
           </button>
