@@ -1,8 +1,13 @@
 import React from 'react'
+import HeaderComponent from '../components/HeaderComponent'
+import LoginFom from '../components/LoginFom'
 
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <>
+    <HeaderComponent/>
+    <LoginFom/>
+    </>
   )
 }
 
