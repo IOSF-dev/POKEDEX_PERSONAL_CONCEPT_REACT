@@ -1,8 +1,71 @@
 .Welcome{
     direction: ltr;
-height: 500px;
-width: 75%;
-align-self: center;
-border: 2px solid black;
-font-size: 50px;
+    min-height: 500px;
+    width: 75%;
+    align-self: center;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.welcome-card {
+    width: min(100%, 720px);
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 32px;
+    border-radius: 20px;
+    background: #f8f8f8;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.welcome-step {
+    font-size: 18px;
+    font-weight: 700;
+    color: #444;
+}
+
+.welcome-text {
+    margin: 0;
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.35;
+    color: #161616;
+}
+
+.welcome-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.welcome-button {
+    min-width: 110px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 999px;
+    background: #d62828;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.welcome-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.welcome-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.welcome-button-secondary {
+    background: #003049;
 }
