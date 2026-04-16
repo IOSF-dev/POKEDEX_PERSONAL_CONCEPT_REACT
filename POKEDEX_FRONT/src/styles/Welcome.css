@@ -1,0 +1,8 @@
+.Welcome{
+    direction: ltr;
+height: 500px;
+width: 75%;
+align-self: center;
+border: 2px solid black;
+font-size: 50px;
+}

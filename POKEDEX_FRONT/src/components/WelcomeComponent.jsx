@@ -11,7 +11,10 @@ const onboardingTexts = [
 
 const WelcomeComponent = () => {
   return (
-    <div>WelcomeComponent</div>
+    <div className='Welcome'>
+
+      texto por slides del array
+    </div>
   )
 }
 

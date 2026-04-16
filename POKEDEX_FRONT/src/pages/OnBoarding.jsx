@@ -5,11 +5,14 @@ import WelcomeComponent from '../components/WelcomeComponent'
 
 const OnBoarding = () => {
   return (
-    <>
+ 
+    <main className='mainWelcome'>
     <HeaderComponent/>
     <WelcomeComponent/>
     <FooterComponent/>
-    </>
+    </main>
+
+   
     
   )
 }
