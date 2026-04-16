@@ -1,6 +1,8 @@
 .header{
 width: 100%;
+direction: rtl;
 }
 .header_IMG{
     height: 100px;
+    
 }
