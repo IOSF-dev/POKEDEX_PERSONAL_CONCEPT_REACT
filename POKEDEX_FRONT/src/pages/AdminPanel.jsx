@@ -27,7 +27,11 @@ const AdminPanel = () => {
               {users.map((user) => (
                 <div key={user.pokeID}>
                   <hr />
-                  <p>{user.pokeName}</p>
+                  <p>{user.pokeID}</p>
+                  <img src={user.pokeOverview.sprites.front_default}/>
+                  
+                  <span>{user.pokeName}</span>
+                  
                 </div>
               ))}
             </div>
