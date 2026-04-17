@@ -8,7 +8,7 @@
 }
 
 .login_DIV {
-    background: url("../../public/close-pdx-removebg-preview\ \(1\).png");
+    background: url("/close-pdx-removebg-preview\ \(1\).png");
     width: 100%;
 
     height: 100%;
@@ -93,7 +93,7 @@
 }
 
 .GIF {
-    background: url("../../public/pokemon-imagen-animada-0024-ezgif.com-gif-maker.gif");
+    background: url("/pokemon-imagen-animada-0024-ezgif.com-gif-maker.gif");
     width: 100px;
     height: 100%;
     background-repeat: no-repeat;

@@ -1,0 +1,39 @@
+{
+  "name": "grupo2_back_end",
+  "version": "1.0.0",
+  "description": "Welcome, We are Isaac, Alvaro and Moises, we belong to the XVIII edition of Web Development Full Stack + IA by CodeSpace Academy. We work in a collaborative project from middle course to apply skills and knowledge and work altogether as a team.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moiseslopez1014/Grupo2_Back_End.git"
+  },
+  "keywords": [
+    "Pokedex",
+    "Pokemon",
+    "Server",
+    "Learning",
+    "Practice"
+  ],
+  "author": "Isaac | Alvaro | Moises",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/moiseslopez1014/Grupo2_Back_End/issues"
+  },
+  "homepage": "https://github.com/moiseslopez1014/Grupo2_Back_End#readme",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongoose": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
