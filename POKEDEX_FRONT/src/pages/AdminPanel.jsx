@@ -4,7 +4,13 @@ import HeaderComponent from '../components/HeaderComponent'
 const AdminPanel = () => {
   return (
     <>
-    <HeaderComponent/>
+    <main className='main'>
+<HeaderComponent/>
+<div className='main_PANEL'></div>
+
+    </main>
+    
+
     </>
     
   )

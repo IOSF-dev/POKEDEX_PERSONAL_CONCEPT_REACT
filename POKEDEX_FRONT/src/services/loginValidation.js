@@ -8,34 +8,34 @@ export async function loginValidation(inputData) {
       body: JSON.stringify(inputData),
     });
 
-    const adminData = await adminRes.json();
+    const admin = await adminRes.json();
 
     if (adminRes.ok) {
-      const user = adminData.data;
+      const TRAINER = admin.data;
 
       const payload = {
         mode: "admin",
-        userName: user.userID,
-        collection: user.adminCollection,
+        userName: TRAINER.userID,
+        collection: TRAINER.adminCollection,
       };
 
       localStorage.setItem("pdx_user", JSON.stringify(payload));
 
-      return { ok: true, mode: "admin", data: user };
+      return { ok: true, mode: "admin", data: TRAINER };
     }
 
     const pokeName = inputData.userID.toLowerCase();
     const pokeID = Number(inputData.userPASS);
 
-    const pokeRes = await fetch(`${apiConfig.baseUrl}pokemon/${pokeID}`);
-    const pokeData = await pokeRes.json();
+    const userRes = await fetch(`${apiConfig.baseUrl}pokemon/${pokeID}`);
+    const user = await userRes.json();
 
     if (
-      pokeRes.ok &&
-      pokeData.data &&
-      pokeData.data.pokeName.toLowerCase() === pokeName
+      userRes.ok &&
+      user.data &&
+      user.data.pokeName.toLowerCase() === pokeName
     ) {
-      const pokemon = pokeData.data;
+      const pokemon = user.data;
 
       const payload = {
         mode: "pokemon",
