@@ -9,29 +9,98 @@
 .main_PANEL{
     background: url("../../public/Artboard1.png");
     width: 100%;
-    height: 510px;
+           height: 510px;
+        background-size: 780px 500px;
    display: flex;
+   flex-direction: row;
+   align-items: center;
     background-position: center;
-    background-size: contain;
+   
     border: 2px solid red;
     background-repeat: no-repeat;
     z-index: 1;
     margin-inline: auto;
 }
 .left{
+    direction: rtl;
     width:50% ;
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px;
     height: 100%;
      border: 2px solid black;
+   padding-bottom: 30px;
+    }
+    .item_top_L{
+        top: 60px;
+        direction: ltr;
+        height: 100px;
+        width: 220px;
+        border: 2px solid rgb(35, 81, 187);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 2px;
+        margin-bottom: ;
+    }
+    .NUMBERID{
+        align-content: center;
+        border: 2px solid blue;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+    }
+    .itemMAIN{
+        direction: ltr;
+        width: 222px;
+        height: 150px;
+        border: 2px solid yellow;
+        padding-left: 6px;
+    }
+    .GRID{
+        height: 100%;
+        border: 2px solid rgb(47, 255, 0);
+        width: 200px;
+    }
+.item1{
+     
+    border: 2px solid rgb(35, 187, 96);
+    width: 35%;
+    height: 90px;
 }
 .rigth{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    direction: ltr;
      border: 2px solid black;
      width: 50%;
      height: 100%;
+     gap: 15px;
+}
+.itemDOWN{
+        border: 2px solid rgb(35, 187, 96);
+    width: 35%;
+    height: 90px;
+}
+.down_Box{
+    height: 50%;
+    width: 100%;
+    border: 2px solid teal;
+
 }
 @media (min-width: 420px){
     .main_PANEL{
         height: 510px;
         background-size: 780px 500px;
+    }
+    .item1{
+        width: 215px;
+    }
+    .itemDOWN{
+        width: 220px;
     }
 }
 
@@ -41,12 +110,39 @@
         height: 510px;
         background-size: 850px 550px;
     }
+        .item1{
+        width: 235px;
+    }
+    .itemDOWN{
+        width: 240px;
+    }
+    .item_top_L{
+        width: 240px;
+    }
+    .itemMAIN{
+            width: 240px;
+    }
 }
 @media (min-width:800px){
     .main_PANEL{
         height: 510px;
         background-size: 870px 570px;
         
+    }
+            .item1{
+        width: 240px;
+    }
+    .itemDOWN{
+        height: 100px;
+        width: 245px;
+    }
+        .item_top_L{
+            height: 110px;
+        width: 245px;
+    }
+        .itemMAIN{
+            height: 170px;
+            width: 245px;
     }
 }
 
