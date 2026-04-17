@@ -8,4 +8,5 @@ z-index: 5;
 .header_IMG{
     height: 100%;
     margin: 1%;
+    max-height: 70px;
 }

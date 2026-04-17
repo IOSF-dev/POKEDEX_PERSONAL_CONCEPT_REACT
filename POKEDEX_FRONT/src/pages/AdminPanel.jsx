@@ -6,7 +6,10 @@ const AdminPanel = () => {
     <>
     <main className='main'>
 <HeaderComponent/>
-<div className='main_PANEL'></div>
+<div className='main_PANEL'>
+  <div className='left' ></div>
+<div className='rigth'></div>
+</div>
 
     </main>
     

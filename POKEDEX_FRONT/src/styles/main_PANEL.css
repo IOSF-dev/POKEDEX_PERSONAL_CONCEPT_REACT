@@ -1,29 +1,52 @@
 .main{
-    
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    border: 2px solid black;
 }
+
 .main_PANEL{
     background: url("../../public/Artboard1.png");
     width: 100%;
-    height: 620px;
-    border: 2px solid black;
+    height: 510px;
+   display: flex;
     background-position: center;
-     background-size:60%;
-     border: 2px solid red;
+    background-size: contain;
+    border: 2px solid red;
     background-repeat: no-repeat;
+    z-index: 1;
+    margin-inline: auto;
 }
-
-@media (min-width: 900px){
+.left{
+    width:50% ;
+    height: 100%;
+     border: 2px solid black;
+}
+.rigth{
+     border: 2px solid black;
+     width: 50%;
+     height: 100%;
+}
+@media (min-width: 420px){
     .main_PANEL{
-        background-size: cover;
+        height: 510px;
+        background-size: 780px 500px;
     }
 }
 
-@media (min-width: 1080px){
+
+@media (min-width:600px){
     .main_PANEL{
-        background-size: 50%;
+        height: 510px;
+        background-size: 850px 550px;
     }
 }
+@media (min-width:800px){
+    .main_PANEL{
+        height: 510px;
+        background-size: 870px 570px;
+        
+    }
+}
+
