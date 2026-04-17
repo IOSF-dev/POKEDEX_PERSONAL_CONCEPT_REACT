@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import HeaderComponent from '../components/HeaderComponent'
 
 const AdminPanel = () => {
+   const [users, setUsers] = useState([])
+    useEffect(() => {
+    const getAllUser = async () => {
+      const response = await fetch('http://localhost:3000/pokemon/')
+      const data = await response.json()
+      setUsers(data.data || [])
+    }
+
+    getAllUser()
+  }, [])
   return (
     <>
     <main className='main'>
@@ -13,9 +23,14 @@ const AdminPanel = () => {
 <div className='item_top_L'>
   
 </div>
-<div className='itemMAIN'>
- 
-</div>
+            <div className='itemMAIN'>
+              {users.map((user) => (
+                <div key={user.pokeID}>
+                  <hr />
+                  <p>{user.pokeName}</p>
+                </div>
+              ))}
+            </div>
 
 
 

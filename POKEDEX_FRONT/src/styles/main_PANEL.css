@@ -71,6 +71,9 @@
         position: relative;
         top: 20px;
         right: 20px;
+        overflow: scroll;
+        overflow-x: hidden;
+        
     }
   
 .itemDOWN{
