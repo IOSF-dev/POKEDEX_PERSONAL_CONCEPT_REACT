@@ -10,7 +10,7 @@
     background: url("../../public/Artboard1.png");
     width: 100%;
            height: 510px;
-        background-size: 780px 500px;
+        background-size: 600px 500px;
    display: flex;
    flex-direction: row;
    align-items: center;
@@ -21,6 +21,9 @@
     z-index: 1;
     margin-inline: auto;
 }
+
+
+
 .left{
     direction: rtl;
     width:50% ;
@@ -35,40 +38,105 @@
     .item_top_L{
         top: 60px;
         direction: ltr;
-        height: 100px;
-        width: 220px;
-        border: 2px solid rgb(35, 81, 187);
+        height: 60px;
+        width: 50px;
+        border: 2px solid rgb(232, 239, 25);
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0px 2px;
-        margin-bottom: ;
+        padding:  7px;
+        border-radius: 50%;
+        text-align: center;
+ position: relative;
+ top: -8px;
+        right: 127px;
     }
-    .NUMBERID{
+    .NUMBERID{ /*MOBILE-SIZE! ---SE PUEDEN QUITAR BORDERS*/
+        padding: 8px;
+         margin-bottom: 18px;
+               font-size: 26px;
+        font-family: "PIXEL","tahoma";
         align-content: center;
-        border: 2px solid blue;
+        border: 1px solid blue;
         height: 50px;
-        width: 50px;
+        width: 40px;
         border-radius: 50%;
     }
     .itemMAIN{
         direction: ltr;
-        width: 222px;
+        width: 145px;
         height: 150px;
         border: 2px solid yellow;
-        padding-left: 6px;
+        padding-left: 16px;
+        position: relative;
+        top: 20px;
+        right: 20px;
     }
-    .GRID{
-        height: 100%;
-        border: 2px solid rgb(47, 255, 0);
-        width: 200px;
-    }
-.item1{
-     
-    border: 2px solid rgb(35, 187, 96);
-    width: 35%;
+  
+.itemDOWN{
+        border: 2px solid rgb(86, 35, 187);
+    width: 100%;
     height: 90px;
+    position: relative;
+    top: 19px;
 }
+.down_Box{
+    height: 37px;
+    width: 66px;
+    border: 2px solid rgb(231, 227, 10);
+    direction: ltr;
+padding-left: 30px;
+position: relative;
+top: 3px;
+right: 80px;
+}
+.down_Box1{
+    height: 50%;
+    width: 100%;
+    border: 2px solid rgb(231, 227, 10);
+    direction: rtl;
+display: flex;
+
+}
+.BOX1{
+    width: 40px;
+    height: 100%;
+    border: 2px solid white;
+}
+.SUB0{
+    width: 25px;
+    height: 27px;
+    border: 2px solid white ;
+    border-radius: 50%;
+    position: relative;
+    top: 7px;
+    right: 139px;
+}
+.BOX2{
+    display: flex;
+    width: 80px;
+    height: 100%;
+border: 2px solid white;
+}
+.SUB{
+    position: relative;
+    width: 27px;
+    height: 10px;
+    margin: 4px;
+    border: 2px solid black;
+    top: 10px;
+    right: 42px;
+}
+.down_Box_4{
+    
+    border: 2px solid rgb(52, 7, 231);
+    height: 100%;
+    width: 45%;
+}
+
+
+
+
 .rigth{
 
     display: flex;
@@ -80,18 +148,14 @@
      height: 100%;
      gap: 15px;
 }
-.itemDOWN{
-        border: 2px solid rgb(35, 187, 96);
+.item1{
+     
+    border: 2px solid rgb(35, 187, 96);
     width: 35%;
     height: 90px;
 }
-.down_Box{
-    height: 50%;
-    width: 100%;
-    border: 2px solid teal;
 
-}
-@media (min-width: 420px){
+@media (min-width: 431px){
     .main_PANEL{
         height: 510px;
         background-size: 780px 500px;

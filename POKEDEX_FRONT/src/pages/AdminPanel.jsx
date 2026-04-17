@@ -9,15 +9,27 @@ const AdminPanel = () => {
 <div className='main_PANEL'>
 
   <div className='left' >
+    
 <div className='item_top_L'>
-  <div className='NUMBERID'></div>
+  
 </div>
 <div className='itemMAIN'>
-  <div className='GRID'></div>
+ 
 </div>
+
+
+
 <div className='itemDOWN'>
-  <div className='down_Box'></div>
-  <div className='down_Box'></div>
+  <div className='down_Box1'>
+    <div className='SUB0'></div>
+        <div className='SUB'></div>
+      <div className='SUB'></div>
+  
+    
+  </div>
+  <div className='down_Box'>
+   
+  </div>
 </div>
   </div>
 
