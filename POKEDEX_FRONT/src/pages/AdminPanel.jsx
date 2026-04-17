@@ -34,8 +34,8 @@ const AdminPanel = () => {
   </div>
 
 <div className='rigth'>
-<div className='item1'></div>
-<div className='item1'></div>
+<div className='item_R_UP'></div>
+<div className='item1_R_DOWN'></div>
 
 </div>
 </div>

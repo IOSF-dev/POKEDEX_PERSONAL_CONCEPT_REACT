@@ -148,13 +148,25 @@ border: 2px solid white;
      height: 100%;
      gap: 15px;
 }
-.item1{
+.item_R_UP{
      
     border: 2px solid rgb(35, 187, 96);
-    width: 35%;
-    height: 90px;
+    width: 140px;
+    height: 120px;
+    position: relative;
+    top: 60px;
+    left: 30px;
 }
 
+.item1_R_DOWN{
+     
+    border: 2px solid rgb(35, 187, 96);
+    width: 150px;
+    height: 120px;
+    position: relative;
+    top: 40px;
+    left: 25px;
+}
 @media (min-width: 431px){
     .main_PANEL{
         height: 510px;
