@@ -3,37 +3,41 @@
     min-height: 500px;
     width: 75%;
     align-self: center;
-    border: 2px solid black;
+    
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    padding: 14px;
     box-sizing: border-box;
 }
 
 .welcome-card {
     width: min(100%, 720px);
-    min-height: 280px;
+    min-height: 380px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 24px;
-    padding: 32px;
-    border-radius: 20px;
-    background: #f8f8f8;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    gap: 4px;
+    padding: 10px;
+        
+
+    text-align: center;
+    font-family: "PIXEL", "tahoma";
+    
 }
 
 .welcome-step {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
     color: #444;
+    
 }
 
 .welcome-text {
     margin: 0;
-    font-size: clamp(26px, 3vw, 38px);
-    line-height: 1.35;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.1;
+    
     color: #161616;
 }
 
@@ -68,4 +72,34 @@
 
 .welcome-button-secondary {
     background: #003049;
+}
+
+
+.divPika{
+   float: right;
+  background-size: 250px;
+  background-repeat: no-repeat;
+  background-image: url("../../public/output-onlinepngtools.png");
+  position: relative;
+  top: -94px;
+  left: 0;
+  width: 300px;
+  height: 340px;
+  z-index: 15;
+ 
+}
+.divPika {
+
+  animation: wobble 4s infinite;
+  @keyframes wobble {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-const onboardingTexts = [
+const TextoSlides = [
   'Bienvenido a PokeDex Trainer',
   'Explora la lista y toca cualquier Pokemon para ver su ficha completa con estadisticas y descripcion.',
   'En el modo detalle, pulsa EDIT para modificar nombre, peso, altura, tipo o descripcion.',
@@ -10,25 +10,25 @@ const onboardingTexts = [
 ]
 
 const WelcomeComponent = () => {
-  const [currentStep, setCurrentStep] = useState(0)
+  const [textoArray, setTextoArray] = useState(0)
   const navigate = useNavigate()
-  const isFirstStep = currentStep === 0
-  const isLastStep = currentStep === onboardingTexts.length - 1
+  const isFirstStep = textoArray === 0
+  const isLastStep = textoArray === TextoSlides.length - 1
 
   const handleNext = () => {
     if (!isLastStep) {
-      setCurrentStep((prevStep) => prevStep + 1)
+      setTextoArray((prevStep) => prevStep + 1)
     }
   }
 
   const handleBack = () => {
     if (!isFirstStep) {
-      setCurrentStep((prevStep) => prevStep - 1)
+      setTextoArray((prevStep) => prevStep - 1)
     }
   }
 
   const handleSkip = () => {
-    setCurrentStep(onboardingTexts.length - 1)
+    setTextoArray(TextoSlides.length - 1)
     navigate("/login")
   }
 
@@ -36,10 +36,10 @@ const WelcomeComponent = () => {
     <div className='Welcome'>
       <div className='welcome-card'>
         <span className='welcome-step'>
-          {currentStep + 1} / {onboardingTexts.length}
+          {textoArray + 1} / {TextoSlides.length}
         </span>
 
-        <p className='welcome-text'>{onboardingTexts[currentStep]}</p>
+        <p className='welcome-text'>{TextoSlides[textoArray]}</p>
 
         <div className='welcome-actions'>
           <button

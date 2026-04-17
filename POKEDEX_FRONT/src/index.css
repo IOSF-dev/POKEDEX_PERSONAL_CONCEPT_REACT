@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "PIXEL";
+  src: url(../fonts/PKMNRBYGSC.ttf) format("truetype");
+}
 :root{
     background-color: #ede07f;
    
