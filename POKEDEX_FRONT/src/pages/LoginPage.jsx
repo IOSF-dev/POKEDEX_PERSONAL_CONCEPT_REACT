@@ -5,8 +5,13 @@ import LoginFom from '../components/LoginFom'
 const LoginPage = () => {
   return (
     <>
-    <HeaderComponent/>
+    <main className='main_LOG'>
+ <HeaderComponent/>
     <LoginFom/>
+    <footer className='footer_LOG'><div className='GIF'></div></footer>
+
+    </main>
+   
     </>
   )
 }

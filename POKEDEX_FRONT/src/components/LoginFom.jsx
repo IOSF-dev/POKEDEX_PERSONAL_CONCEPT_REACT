@@ -4,9 +4,9 @@ const LoginFom = () => {
   return (
     <div className='login_DIV'>
       <div className='login_box'>
-        <input type="text" />
-        <input type="text" />
-
+        <input className='CUENTA' type="text" placeholder="Email-Pokemon"/>
+        <input className='CLAVE' type="password" placeholder="Password "  />
+        <button className='BOTONSUBMIT'>LOGIN</button>
       </div>
 
     </div>

@@ -1,8 +1,11 @@
 .header{
 width: 100%;
 direction: rtl;
+height: 9%;
+z-index: 5;
+
 }
 .header_IMG{
-    height: 100px;
-    
+    height: 100%;
+    margin: 1%;
 }

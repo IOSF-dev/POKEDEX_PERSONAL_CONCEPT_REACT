@@ -4,5 +4,19 @@
 }
 :root{
     background-color: #ede07f;
-   
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root{
+    min-height: 100vh;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
 }
