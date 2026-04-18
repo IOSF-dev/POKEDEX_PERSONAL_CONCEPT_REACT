@@ -7,19 +7,12 @@ import { getSession } from "../services/sessions";
 const AdminPanel = () => {
   const [pokemons, setPokemons] = useState([])
 const session = getSession();
-const userInitial = session?.userName?.charAt(0).toUpperCase()
-
-
+const userInitial = session?.userName?.charAt(0).toUpperCase();
   const loadPokemons = async () => {
     const aux = await getAllPokemons()
     setPokemons(aux.data || [])
   }
   
-  
-
-
-
-
   useEffect(() => {
     loadPokemons()
   }, [])
