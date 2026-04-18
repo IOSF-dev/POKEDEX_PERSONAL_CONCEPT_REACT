@@ -42,7 +42,7 @@
         direction: ltr;
         height: 60px;
         width: 50px;
-        border: 2px solid rgb(232, 239, 25);
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -67,13 +67,13 @@
         direction: ltr;
         width: 145px;
         height: 150px;
-        border: 2px solid yellow;
-        padding-left: 16px;
+       padding: 4px;
+
         position: relative;
         top: 20px;
         right: 20px;
         overflow: scroll;
-        
+        overflow-x: hidden;
         
     }
   
@@ -265,18 +265,18 @@ left: 35px;
     }
   .item_top_L{
         right: 192px;
-        top: -12px;
+        top: -18px;
                 height: 60px;
         width: 60px;
     }
     .itemMAIN{
-        height: 177px;
+        height: 170px;
         width: 204px;
         right: 35px;
     }
     .SUB0{
-        right: 208px;
-        top: 6px;
+        right: 209px;
+        top: 11px;
             width: 31px;
     height: 31px;
     }

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import HeaderComponent from '../components/HeaderComponent'
 import { getAllPokemons } from '../services/PokemonService'
 import { getSession } from "../services/sessions";
+import PokemonCard from '../components/PokemonCard';
 
 
 const AdminPanel = () => {
@@ -26,14 +27,14 @@ const userInitial = session?.userName?.charAt(0).toUpperCase();
             
             
             <section className='itemMAIN'>
-              {pokemons.map((user) => (
-                <div key={user.pokeID}>
-                  <hr />
-                  <p>{user.pokeID}</p>
-                  <img src={user.pokeOverview.sprites.front_default} />
-                  <span>{user.pokeName}</span>
-                </div>
-              ))}
+              {!pokemons || pokemons.length === 0 ? (
+                          <div>
+            <h3>Cargando pokemons...</h3>
+          </div>
+        ) : (
+              pokemons.map((user) => (
+                <PokemonCard key={user.pokeID} pokemon={user} />
+              )))}
             </section>
 
 
