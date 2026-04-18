@@ -38,3 +38,84 @@ z-index: 10;
     color: greenyellow;
  
 }
+.HEIGTH{
+    position: relative;
+
+    padding: 0px;
+    margin: 0px;
+    width: 50px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    font-family: "PIXEL";
+    font-size: 12px;
+    color: black;
+    top: 24px;
+    left: 11px;
+}
+.WEIGTH{
+position: relative;
+
+padding: 0px;
+margin: 0px;
+width: 48px;
+height: 30px;
+display: flex;
+align-items: center;
+font-family: "PIXEL";
+font-size: 12px;
+color: black;
+top: -5px;
+left: 56px;
+}
+.T1{
+position: relative;
+border: 1px solid black;
+padding: 0px;
+margin: 0px;
+width: 95px;
+height: 35px;
+display: flex;
+align-items: center;
+font-family: "PIXEL";
+font-size: 12px;
+color: greenyellow;
+top: 21px;
+right: -7px;
+}
+.T2{
+position: relative;
+border: 1px solid black;
+padding: 0px;
+margin: 0px;
+width: 95px;
+height: 35px;
+display: flex;
+align-items: center;
+font-family: "PIXEL";
+font-size: 12px;
+color: greenyellow;
+top: -8px;
+right: -117px;
+}
+.POKEMON_DETAIL{
+width: 100%;
+height: 100%;
+overflow: hidden;
+
+}
+.POKEMON_DETAIL_IMG{
+width: 100%;
+height: 100%;
+position: relative;
+top: -10px;
+}
+.POKEMON_DETAIL_NAME{
+margin: 0;
+padding: 0;
+position: relative;
+top: 10px;
+right: -10px;
+font-family: "PIXEL";
+font-weight: 700;
+}

@@ -40,15 +40,18 @@ const AdminPanel = () => {
                   <h3>Cargando pokemons...</h3>
                 </div>
               ) : selectedPokemon ? (
+
                 <article className="POKEMON_DETAIL" onClick={handleBackToList}>
+                  <span className="POKEMON_DETAIL_NAME">
+                    {selectedPokemon.pokeName.toUpperCase()}
+                  </span>
                   <img
                     className="POKEMON_DETAIL_IMG"
                     src={selectedPokemon.pokeOverview.sprites.front_default}
                     alt={selectedPokemon.pokeName}
                   />
-                  <p className="POKEMON_DETAIL_NAME">
-                    {selectedPokemon.pokeName.toUpperCase()}
-                  </p>
+
+
                 </article>
               ) : (
                 pokemons.map((pokemon) => (
@@ -69,7 +72,7 @@ const AdminPanel = () => {
                 <div className='SUB'>1</div>
               </div>
               <div className='down_Box'>
-                {selectedPokemon ? selectedPokemon.pokeID : "NUMBER"}
+                {selectedPokemon ? <p className="TEX">Nº <span className="SPAN">{selectedPokemon.pokeID}</span></p> : <p className="TEX">Nº</p>}
               </div>
             </section>
           </aside>
@@ -79,18 +82,26 @@ const AdminPanel = () => {
           <aside className='rigth'>
             <div className='item_R_UP'>
               {selectedPokemon
-                ? <p className='TEXT_POKE'>DESCRIPTION: <br/> {selectedPokemon.pokeOverview.description}</p> : <p className='TEXT_POKE'> DESCRIPTION: </p> }
+                ? <p className='TEXT_POKE'>DESCRIPTION: <br /> {selectedPokemon.pokeOverview.description}</p> : <p className='TEXT_POKE'> DESCRIPTION: </p>}
             </div>
             <div className='item1_R_DOWN'>
               {selectedPokemon ? (
                 <>
-                  <p>H: {selectedPokemon.pokeOverview.height} <span>W: {selectedPokemon.pokeOverview.weight}</span> </p>
-                 
-                  <p>TIPO 1:{selectedPokemon.pokeOverview.types[0]} - <span>TIPO 2:{selectedPokemon.pokeOverview.types[1]}</span></p>
-                  
+                  <p className='HEIGTH'>H: {selectedPokemon.pokeOverview.height}</p> <p className='WEIGTH'>W: {selectedPokemon.pokeOverview.weight}</p>
+
+                  <p className='T1'>T: {selectedPokemon.pokeOverview.types[0].toUpperCase()}</p>
+                  <p className='T2'>T:{selectedPokemon.pokeOverview.types[1]?.toUpperCase()} </p>
+
                 </>
               ) : (
-                "peso/altura"
+                <>
+                  <p className='HEIGTH'>H: </p>
+                  <p className='WEIGTH'>W: </p>
+
+                  <p className='T1'>T:</p>
+                  <p className='T2'>T:</p>
+
+                </>
               )}
             </div>
           </aside>

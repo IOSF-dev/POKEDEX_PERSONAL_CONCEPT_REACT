@@ -87,12 +87,30 @@
 .down_Box{
     height: 37px;
     width: 66px;
-    border: 2px solid rgb(231, 227, 10);
+   
     direction: ltr;
-padding-left: 30px;
+display: flex;
 position: relative;
 top: 3px;
 right: 80px;
+text-align: center;
+align-items: center;
+font-family: "PIXEL";
+
+font-weight: 500;
+ white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.TEX{
+    
+     margin-left: 5px;
+    font-size: 20px;
+}
+.SPAN{
+   
+    font-size: 16px;
+    
 }
 .down_Box1{
     height: 50%;
@@ -162,13 +180,15 @@ border: 2px solid white;
 }
 
 .item1_R_DOWN{
-     
-    border: 2px solid rgb(35, 187, 96);
+     display: flex;
+     flex-direction: column;
+   
     width: 150px;
     height: 120px;
     position: relative;
     top: 40px;
-    left: 25px;
+    left: 27px;
+    
 }
 @media (min-width: 431px){
     .main_PANEL{
