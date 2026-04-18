@@ -1,12 +1,12 @@
 import React from 'react'
 
 const PokemonCard = (props) => {
-const { pokemon } = props;
+const { pokemon, onSelect } = props;
 
 
   return (
 <>
-    <article className='CARD'>
+    <article className='CARD' onClick={()=> onSelect(pokemon)}>
       <div
         className='CARD_IMG'
         style={{ backgroundImage: `url(${pokemon.pokeOverview.sprites.front_default})` }}

@@ -6,14 +6,22 @@ import PokemonCard from '../components/PokemonCard';
 
 
 const AdminPanel = () => {
+
   const [pokemons, setPokemons] = useState([])
-const session = getSession();
-const userInitial = session?.userName?.charAt(0).toUpperCase();
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
+  const session = getSession();
+  const userInitial = session?.userName?.charAt(0).toUpperCase();
   const loadPokemons = async () => {
     const aux = await getAllPokemons()
     setPokemons(aux.data || [])
   }
-  
+  const handleSelectPokemon = (pokemon) => {
+    setSelectedPokemon(pokemon);
+  };
+
+  const handleBackToList = () => {
+    setSelectedPokemon(null);
+  };
   useEffect(() => {
     loadPokemons()
   }, [])
@@ -24,17 +32,33 @@ const userInitial = session?.userName?.charAt(0).toUpperCase();
         <main className='main_PANEL'>
           <aside className='left' >
             <article className='item_top_L'>{userInitial}</article>
-            
-            
+
+
             <section className='itemMAIN'>
               {!pokemons || pokemons.length === 0 ? (
-                          <div>
-            <h3>Cargando pokemons...</h3>
-          </div>
-        ) : (
-              pokemons.map((user) => (
-                <PokemonCard key={user.pokeID} pokemon={user} />
-              )))}
+                <div>
+                  <h3>Cargando pokemons...</h3>
+                </div>
+              ) : selectedPokemon ? (
+                <article className="POKEMON_DETAIL" onClick={handleBackToList}>
+                  <img
+                    className="POKEMON_DETAIL_IMG"
+                    src={selectedPokemon.pokeOverview.sprites.front_default}
+                    alt={selectedPokemon.pokeName}
+                  />
+                  <p className="POKEMON_DETAIL_NAME">
+                    {selectedPokemon.pokeName.toUpperCase()}
+                  </p>
+                </article>
+              ) : (
+                pokemons.map((pokemon) => (
+                  <PokemonCard
+                    key={pokemon.pokeID}
+                    pokemon={pokemon}
+                    onSelect={handleSelectPokemon}
+                  />
+                ))
+              )}
             </section>
 
 
@@ -45,7 +69,7 @@ const userInitial = session?.userName?.charAt(0).toUpperCase();
                 <div className='SUB'>1</div>
               </div>
               <div className='down_Box'>
-                NUMBER
+                {selectedPokemon ? selectedPokemon.pokeID : "NUMBER"}
               </div>
             </section>
           </aside>
@@ -53,8 +77,23 @@ const userInitial = session?.userName?.charAt(0).toUpperCase();
 
 
           <aside className='rigth'>
-            <div className='item_R_UP'>descripcion:</div>
-            <div className='item1_R_DOWN'>peso/altura/tipos</div>
+            <div className='item_R_UP'>
+              {selectedPokemon
+                ? selectedPokemon.pokeOverview.description || "Sin descripcion"
+                : "descripcion:"}
+            </div>
+            <div className='item1_R_DOWN'>
+              {selectedPokemon ? (
+                <>
+                  <p>H: {selectedPokemon.pokeOverview.height} <span>W: {selectedPokemon.pokeOverview.weight}</span> </p>
+                  <p></p>
+                  <p>TIPO 1:{selectedPokemon.pokeOverview.types[0]} - <span>TIPO 2:{selectedPokemon.pokeOverview.types[1]}</span></p>
+                  
+                </>
+              ) : (
+                "peso/altura"
+              )}
+            </div>
           </aside>
         </main>
       </section>
