@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import HeaderComponent from '../components/HeaderComponent'
-import { getAllUsers } from '../services/PokemonService'
+import { getAllPokemons } from '../services/PokemonService'
+import { getSession } from "../services/sessions";
+
 
 const AdminPanel = () => {
-  const [users, setUsers] = useState([])
+  const [pokemons, setPokemons] = useState([])
+const session = getSession();
+const userInitial = session?.userName?.charAt(0).toUpperCase()
+
 
   const loadPokemons = async () => {
-    const aux = await getAllUsers()
-    setUsers(aux.data || [])
+    const aux = await getAllPokemons()
+    setPokemons(aux.data || [])
   }
-  const session = JSON.parse(localStorage.getItem("pdx_user"))
-  const userInitial = session?.userName?.charAt(0).toUpperCase()
+  
+  
 
 
 
@@ -23,14 +28,12 @@ const AdminPanel = () => {
       <section className='main'>
         <HeaderComponent />
         <main className='main_PANEL'>
-
           <aside className='left' >
-
             <article className='item_top_L'>{userInitial}</article>
             
             
             <section className='itemMAIN'>
-              {users.map((user) => (
+              {pokemons.map((user) => (
                 <div key={user.pokeID}>
                   <hr />
                   <p>{user.pokeID}</p>

@@ -1,8 +1,11 @@
 import { apiConfig } from "./ApiConfig.js";
+import {saveSession } from "./sessions.js"
 
-export async function loginValidation(inputData) {
+
+
+export const login = async (inputData) => {
   try {
-    const adminRes = await fetch(`${apiConfig.baseUrl}admin/login`, {
+    const adminRes = await fetch(`${apiConfig.login}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(inputData),
@@ -11,31 +14,28 @@ export async function loginValidation(inputData) {
     const admin = await adminRes.json();
 
     if (adminRes.ok) {
-      const TRAINER = admin.data;
-
+      const ADMIN = admin.data;
       const payload = {
         mode: "admin",
-        userName: TRAINER.userID,
-        collection: TRAINER.adminCollection,
+        userName: ADMIN.userID,
+        collection: ADMIN.adminCollection,
       };
 
-      localStorage.setItem("pdx_user", JSON.stringify(payload));
-
-      return { ok: true, mode: "admin", data: TRAINER };
+      saveSession(payload);
+      return payload;
     }
 
     const pokeName = inputData.userID.toLowerCase();
     const pokeID = Number(inputData.userPASS);
-
-    const userRes = await fetch(`${apiConfig.baseUrl}pokemon/${pokeID}`);
-    const user = await userRes.json();
+    const pokemonRes = await fetch(`${apiConfig.baseUrl}pokemon/${pokeID}`);
+    const pokemon = await pokemonRes.json();
 
     if (
-      userRes.ok &&
-      user.data &&
-      user.data.pokeName.toLowerCase() === pokeName
+      pokemonRes.ok &&
+      pokemon.data &&
+      pokemon.data.pokeName.toLowerCase() === pokeName
     ) {
-      const pokemon = user.data;
+      const pokemon = pokemon.data;
 
       const payload = {
         mode: "pokemon",
@@ -43,9 +43,8 @@ export async function loginValidation(inputData) {
         pokeName: pokemon.pokeName,
       };
 
-      localStorage.setItem("pdx_user", JSON.stringify(payload));
-
-      return { ok: true, mode: "pokemon", data: pokemon };
+      saveSession(payload);
+    return payload;
     }
 
     return { ok: false, message: "Usuario o contraseña incorrectos." };
@@ -53,4 +52,9 @@ export async function loginValidation(inputData) {
     console.log("Network error:", error);
     return { ok: false, message: error.message };
   }
+}
+
+export const logout = ()=> {
+  localStorage.removeItem("pokedex_auth");
+  localStorage.removeItem("pdx_user");
 }

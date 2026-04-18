@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HeaderComponent from "../components/HeaderComponent";
 import LoginFom from "../components/LoginFom";
-import { login } from "../services/AuthServices.js";
+import { login } from "../services/loginValidation.js";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -13,22 +13,16 @@ const LoginPage = () => {
     try {
       setIsLoading(true);
       setErrorMessage("");
-
-      // 1. Pedimos login al servicio.
       const result = await login(formData);
 
-      // 2. loginValidation ya deja guardado el usuario en localStorage.
-      // 3. Segun el rol, navegamos al panel correspondiente.
       if (result.mode === "admin") {
         navigate("/admin");
         return;
       }
-
       if (result.mode === "pokemon") {
         navigate("/pokemon");
         return;
       }
-
       setErrorMessage("No se pudo determinar el tipo de acceso.");
     } catch (error) {
       setErrorMessage(error.message);

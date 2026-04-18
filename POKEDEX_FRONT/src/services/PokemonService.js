@@ -1,5 +1,7 @@
 import { apiConfig } from "./ApiConfig";
-export const getAllUsers = async () => {
+
+
+export const getAllPokemons = async () => {
     try {
         const response = await fetch(`${apiConfig.pokemon}`)
         if (!response.ok) {
@@ -13,9 +15,10 @@ export const getAllUsers = async () => {
         console.log("Error", error.message);
     }
 }
+
 export const getPokemonById = async (pokeID) => {
     try {
-        const response =await fetch(`http://localhost:3000/pokemon/${pokeID}`);
+        const response =await fetch(`${apiConfig.pokemon}${pokeID}`);
         if (!response.ok) {
             throw new Error("error al hacer el fetch")
         }
