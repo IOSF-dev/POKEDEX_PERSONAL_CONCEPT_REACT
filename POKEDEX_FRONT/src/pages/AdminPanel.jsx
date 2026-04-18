@@ -1,69 +1,68 @@
 import React, { useEffect, useState } from 'react'
 import HeaderComponent from '../components/HeaderComponent'
+import { getAllUsers } from '../services/PokemonService'
 
 const AdminPanel = () => {
-   const [users, setUsers] = useState([])
-    useEffect(() => {
-    const getAllUser = async () => {
-      const response = await fetch('http://localhost:3000/pokemon/')
-      const data = await response.json()
-      setUsers(data.data || [])
-    }
+  const [users, setUsers] = useState([])
 
-    getAllUser()
+  const loadPokemons = async () => {
+    const aux = await getAllUsers()
+    setUsers(aux.data || [])
+  }
+  const session = JSON.parse(localStorage.getItem("pdx_user"))
+  const userInitial = session?.userName?.charAt(0).toUpperCase()
+
+
+
+
+  useEffect(() => {
+    loadPokemons()
   }, [])
   return (
     <>
-    <main className='main'>
-<HeaderComponent/>
-<div className='main_PANEL'>
+      <section className='main'>
+        <HeaderComponent />
+        <main className='main_PANEL'>
 
-  <div className='left' >
-    
-<div className='item_top_L'>
-  
-</div>
-            <div className='itemMAIN'>
+          <aside className='left' >
+
+            <article className='item_top_L'>{userInitial}</article>
+            
+            
+            <section className='itemMAIN'>
               {users.map((user) => (
                 <div key={user.pokeID}>
                   <hr />
                   <p>{user.pokeID}</p>
-                  <img src={user.pokeOverview.sprites.front_default}/>
-                  
+                  <img src={user.pokeOverview.sprites.front_default} />
                   <span>{user.pokeName}</span>
-                  
                 </div>
               ))}
-            </div>
+            </section>
+
+
+            <section className='itemDOWN'>
+              <div className='down_Box1'>
+                <div className='SUB0'>X</div>
+                <div className='SUB'>2</div>
+                <div className='SUB'>1</div>
+              </div>
+              <div className='down_Box'>
+                NUMBER
+              </div>
+            </section>
+          </aside>
 
 
 
-<div className='itemDOWN'>
-  <div className='down_Box1'>
-    <div className='SUB0'></div>
-        <div className='SUB'></div>
-      <div className='SUB'></div>
-  
-    
-  </div>
-  <div className='down_Box'>
-   
-  </div>
-</div>
-  </div>
-
-<div className='rigth'>
-<div className='item_R_UP'></div>
-<div className='item1_R_DOWN'></div>
-
-</div>
-</div>
-
-    </main>
-    
+          <aside className='rigth'>
+            <div className='item_R_UP'>descripcion:</div>
+            <div className='item1_R_DOWN'>peso/altura/tipos</div>
+          </aside>
+        </main>
+      </section>
 
     </>
-    
   )
 }
 

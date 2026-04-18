@@ -39,7 +39,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <main className="main_LOG">
+      <section className="main_LOG">
         <HeaderComponent />
         <LoginFom
           onLogin={handleLogin}
@@ -49,7 +49,7 @@ const LoginPage = () => {
         <footer className="footer_LOG">
           <div className="GIF"></div>
         </footer>
-      </main>
+      </section>
     </>
   );
 };

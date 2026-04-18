@@ -3,7 +3,7 @@ const Pokemon = require("../models/pokemon.js");
 
 const getEveryPokemon = async (req, res) => {
   try {
-    const pokemons = await Pokemon.find();
+    const pokemons = await Pokemon.find().sort({ pokeID: 1 });
     if (!pokemons)
       return res
         .status(500)

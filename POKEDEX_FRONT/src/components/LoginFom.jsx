@@ -12,7 +12,7 @@ const LoginFom = ({ onLogin, isLoading, errorMessage }) => {
   };
 
   return (
-    <div className="login_DIV">
+    <main className="login_DIV">
       <form className="login_box" onSubmit={handleSubmit}>
         <input
           className="CUENTA"
@@ -33,7 +33,7 @@ const LoginFom = ({ onLogin, isLoading, errorMessage }) => {
         </button>
         {errorMessage ? <p>{errorMessage}</p> : null}
       </form>
-    </div>
+    </main>
   );
 };
 

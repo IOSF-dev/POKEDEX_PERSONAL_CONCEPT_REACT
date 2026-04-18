@@ -33,15 +33,15 @@ const WelcomeComponent = () => {
   }
 
   return (
-    <div className='Welcome'>
-      <div className='welcome-card'>
+    <main className='Welcome'>
+      <section className='welcome-card'>
         <span className='welcome-step'>
           {textoArray + 1} / {TextoSlides.length}
         </span>
 
         <p className='welcome-text'>{TextoSlides[textoArray]}</p>
 
-        <div className='welcome-actions'>
+        <nav className='welcome-actions'>
           <button
             type='button'
             className='welcome-button'
@@ -68,9 +68,9 @@ const WelcomeComponent = () => {
           >
             Next
           </button>
-        </div>
-      </div>
-    </div>
+        </nav>
+      </section>
+    </main>
   )
 }
 

@@ -6,11 +6,11 @@ import WelcomeComponent from '../components/WelcomeComponent'
 const OnBoarding = () => {
   return (
  
-    <main className='mainWelcome'>
+    <section className='mainWelcome'>
     <HeaderComponent/>
     <WelcomeComponent/>
     <FooterComponent/>
-    </main>
+    </section>
 
    
     
