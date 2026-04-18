@@ -153,8 +153,7 @@ border: 2px solid white;
      gap: 15px;
 }
 .item_R_UP{
-     
-    border: 2px solid rgb(35, 187, 96);
+     padding: 0px 10px;
     width: 140px;
     height: 120px;
     position: relative;
@@ -293,7 +292,7 @@ left: 35px;
         width: 208px;
         left: 40px;
         height: 130px;
-        top: 55px;
+        top: 50px;
     }
     .item1_R_DOWN{
 width: 220px;

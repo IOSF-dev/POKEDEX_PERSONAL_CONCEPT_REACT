@@ -79,14 +79,13 @@ const AdminPanel = () => {
           <aside className='rigth'>
             <div className='item_R_UP'>
               {selectedPokemon
-                ? selectedPokemon.pokeOverview.description || "Sin descripcion"
-                : "descripcion:"}
+                ? <p className='TEXT_POKE'>DESCRIPTION: <br/> {selectedPokemon.pokeOverview.description}</p> : <p className='TEXT_POKE'> DESCRIPTION: </p> }
             </div>
             <div className='item1_R_DOWN'>
               {selectedPokemon ? (
                 <>
                   <p>H: {selectedPokemon.pokeOverview.height} <span>W: {selectedPokemon.pokeOverview.weight}</span> </p>
-                  <p></p>
+                 
                   <p>TIPO 1:{selectedPokemon.pokeOverview.types[0]} - <span>TIPO 2:{selectedPokemon.pokeOverview.types[1]}</span></p>
                   
                 </>

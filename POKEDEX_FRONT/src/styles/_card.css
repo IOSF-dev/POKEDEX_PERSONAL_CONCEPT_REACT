@@ -31,3 +31,10 @@ font-family: "PIXEL";
 font-size: 10px;
 z-index: 10;
 }
+
+.TEXT_POKE{
+    font-family: "PIXEL";
+    font-size: 13px;
+    color: greenyellow;
+ 
+}
