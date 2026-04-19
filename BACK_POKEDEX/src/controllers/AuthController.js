@@ -4,9 +4,34 @@ const PokemonModel = require("../models/pokemonModel.js");  //// llamo al modelo
 const generateToken = require("../utils/authToken");
 
 
+const loginAdmin = async (req, res) => {
+  try {
+    const { userID, userPASS } = req.body;
+
+    if (!userID || !userPASS) {
+      return res.status(400).json({ error: "no username or password" });
+    }
+    const admin = await Admin.findOne({
+      userID: userID,
+    });
+    if (!admin) {
+      return res.status(404).json({ error: "Incorrect user or password" });
+    }
+    if (admin.userPASS !== userPASS) {
+      return res.status(401).json({ error: "Incorrect user or password" });
+    }
+    return res.status(200).json({
+      message: "Succesful login",
+      data: admin,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-const signupController = async (req, res) => { ////revisada en potman (ok)
+const createAccountController = async (req, res) => { ////revisada en potman (ok)
   try {
     const { name, lastName, email, password } = req.body; /// destructuring del body
     if (!name || !lastName || !email || !password) { ///comprobacion de que los datos del body estan presentes
@@ -84,4 +109,4 @@ const getTokenController = async (req, res) => {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-module.exports = { signupController, loginController, getTokenController };  //exportamos los modulos
+module.exports = { createAccountController, loginController, getTokenController,loginAdmin };  //exportamos los modulos

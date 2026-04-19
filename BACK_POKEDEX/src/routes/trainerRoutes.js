@@ -5,7 +5,13 @@ const { getEveryPokemon, createPokemon, deletePokemon, modifyPokemon, getPokemon
 
 ////aqui tendria que ir las rutas del administrador-crear-borra-editar-collection-verifyMiddlewares signingUp
 const router = express.Router();
+////rutas para el propio account
+/// get
+///create
+/// delete
+/// edit
 
+///////////////rutas para pokemons
 
 router.get("/",/*MIDDLEWARE SI JWT & LOGINOK*/ getEveryPokemon);
 router.post("/", /*MIDDLEWARE SI JWT & LOGINOK*/ createPokemon);

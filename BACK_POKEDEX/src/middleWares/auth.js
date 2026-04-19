@@ -17,4 +17,30 @@ const verifyToken = (req, res, next) => {   //// next en middleware si procede c
         }
     }
 }
-module.exports = { verifyToken };
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const verifyAdmin = (req, res, next) => {
+    try {
+        const { role } = req.payload;
+        if (role !== "admin") return res.status(401).send({ status: "Failed", message: "credenciales invalidas" });
+        next();
+    } catch (error) {
+        return res.status(401).send({ status: "Failed", message: "Admin required" });
+    }
+
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
+const verifyUserPermissions = async (req, res, next) => {
+    try {
+        const { _id: idUserPermited, role: roleAdmin } = req.payload;
+        const { idUser } = req.params;
+        if (idUserPermited === idUser || roleAdmin === "admin")
+            next();
+        else {
+            return res.status(403).send({ status: "Failed", message: "you not have privilages" })
+        }
+    } catch (error) {
+        return res.status(401).send({ status: "Failed", message: error.message });
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+module.exports = { verifyToken, verifyAdmin, verifyUserPermissions };

@@ -3,8 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./src/models/db.js");
 const pokemonRoutes = require("./src/routes/pokemonRoutes.js");
-const routeTest = require("./src/routes/routeTest.js");
-const adminRoutes = require("./src/routes/adminRoutes");
+
+const trainerRoutes = require("./src/routes/trainerRoutes");
 const authRoutes = require("./src/routes/authRoutes");
 const app = express();
 
@@ -28,7 +28,7 @@ connectDB();
 
 app.use("/pokemon", pokemonRoutes);
 
-app.use("/admin", adminRoutes);
+app.use("/trainer", trainerRoutes);
 
 app.use("/auth", authRoutes);
 
