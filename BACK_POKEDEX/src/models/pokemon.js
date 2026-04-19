@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
+//modelo completo parece IA
 
+//poke id y poke pass...que coño es eso?
 const pokemonSchema = new mongoose.Schema({
   pokeID: {
     type: Number,

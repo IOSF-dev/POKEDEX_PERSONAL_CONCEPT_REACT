@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const axios = require("axios");
 
-const Admin = require("./admin");
-const Pokemon = require("./pokemon");
+const Admin = require("../models/admin");
+const Pokemon = require("../models/pokemon");
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms)); //delay para que no pete por volumen creo?
 
 async function fetchWithRetry(url, retries = 3) {
   try {
@@ -32,7 +32,7 @@ async function seed() {
     await Pokemon.deleteMany({});
 
     console.log("Pushing admins");
-    await Admin.insertMany([
+    await Admin.insertMany([ //podias haber hecho array fuera y meter variable (escalabilidad y clean code) modelo admin
       { userID: "moises@pdx.com", userPASS: "moises123", role: "admin" },
       { userID: "isaac@pdx.com", userPASS: "isaac123", role: "admin" },
       { userID: "alvaro@pdx.com", userPASS: "alvaro123", role: "admin" },
@@ -41,9 +41,9 @@ async function seed() {
 
     console.log("Fetching Pokémon from API...");
 
-    const pokemonsToInsert = [];
+    const pokemonsToInsert = []; //variable array vacio primero, ok...
 
-    for (let id = 1; id <= 151; id++) {
+    for (let id = 1; id <= 151; id++) { //bucle for de 151 veces. OK
       console.log(`Fetching Pokémon #${id}`);
 
       const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${id}`;
@@ -57,16 +57,20 @@ async function seed() {
         continue;
       }
 
-      const flavor =
+      const LANG = //IDIOMA ES & EN
         s.flavor_text_entries.find((f) => f.language.name === "es") ||
         s.flavor_text_entries.find((f) => f.language.name === "en");
-      const pokeDocument = {
+
+
+      const pokeDocument = {  //LO GORDO el modelo pokemon 
+
+
         pokeID: id,
         pokeName: p.name,
         pokePass: String(id),
 
         pokeOverview: {
-          description: flavor ? flavor.flavor_text.replace(/\n|\f/g, " ") : "",
+          description: LANG ? LANG.flavor_text.replace(/\n|\f/g, " ") : "",
           height: p.height,
           weight: p.weight,
           base_experience: p.base_experience,
@@ -89,12 +93,12 @@ async function seed() {
         },
       };
 
-      pokemonsToInsert.push(pokeDocument);
+      pokemonsToInsert.push(pokeDocument); // en el array mete un push del pokedocument(151 veces)
 
-      await delay(400);
+      await delay(400); ///espera entre pushs
     }
 
-    await Pokemon.insertMany(pokemonsToInsert);
+    await Pokemon.insertMany(pokemonsToInsert); /// aqui mete el array de 151 objetos (el MAIN DATA) con un .insertMany(DATA) al Schema que responde a "Pokemon"(pokemonSchema)
     console.log("151 Pokémons inserted");
 
     mongoose.connection.close();
@@ -105,4 +109,4 @@ async function seed() {
   }
 }
 
-seed();
+seed(); //llama a seed

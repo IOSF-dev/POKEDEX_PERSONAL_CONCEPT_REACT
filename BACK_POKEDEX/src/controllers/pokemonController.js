@@ -1,6 +1,6 @@
 const Admin = require("../models/admin.js");
 const Pokemon = require("../models/pokemon.js");
-
+///controllers los veo ok para el ADMIN-PANEL
 const getEveryPokemon = async (req, res) => {
   try {
     const pokemons = await Pokemon.find().sort({ pokeID: 1 });

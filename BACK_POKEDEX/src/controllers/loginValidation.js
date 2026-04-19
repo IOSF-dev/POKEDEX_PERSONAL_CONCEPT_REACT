@@ -1,5 +1,5 @@
 const Admin = require("../models/admin.js");
-
+///chekear logica de login
 const loginAdmin = async (req, res) => {
   try {
     const { userID, userPASS } = req.body;

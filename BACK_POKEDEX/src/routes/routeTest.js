@@ -1,6 +1,6 @@
 const express = require("express");
 const Test = require("../models/Test.js");
-
+///me reservo el comentariio...todo delete
 const router = express.Router();
 
 router.get("/serverTest", (req, res) => {
