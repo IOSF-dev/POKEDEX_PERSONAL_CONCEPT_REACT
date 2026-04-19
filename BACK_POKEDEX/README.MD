@@ -13,12 +13,4 @@ seed MUY OK
 -admin controller - pokemon controller - auth controller
 -test out or fix
 - utils folder 
- missing dependencies .json mirar (  "dependencies": {
-    "bcrypt": "^6.0.0",
-    "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
-    "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.2.1",
-    "nodemailer": "^8.0.1"
-  },)
+  dependencies .json mirar ( axios...mirar si quitar )
