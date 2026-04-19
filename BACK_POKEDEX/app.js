@@ -5,7 +5,7 @@ const connectDB = require("./src/models/db.js");
 const pokemonRoutes = require("./src/routes/pokemonRoutes.js");
 const routeTest = require("./src/routes/routeTest.js");
 const adminRoutes = require("./src/routes/adminRoutes");
-
+const authRoutes = require("./src/routes/authRoutes");
 const app = express();
 
 app.use(
@@ -30,7 +30,7 @@ app.use("/pokemon", pokemonRoutes);
 
 app.use("/admin", adminRoutes);
 
-app.use("/testing", routeTest);
+app.use("/auth", authRoutes);
 
 const PORT = Number(process.env.PORT) || 3000;
 
