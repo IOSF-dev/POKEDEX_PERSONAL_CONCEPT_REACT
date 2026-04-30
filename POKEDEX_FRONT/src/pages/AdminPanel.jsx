@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import HeaderComponent from '../components/HeaderComponent'
-import { getAllPokemons } from '../services/PokemonService'
+import { deletePokemon, getAllPokemons } from '../services/PokemonService'
 import { getSession } from "../services/sessions";
 import PokemonCard from '../components/PokemonCard';
 
@@ -22,6 +22,15 @@ const AdminPanel = () => {
   const handleBackToList = () => {
     setSelectedPokemon(null);
   };
+
+  const handleDeletePokemon = async () => {
+    if (!selectedPokemon?.pokeID) return;
+
+    await deletePokemon(selectedPokemon.pokeID);
+    setSelectedPokemon(null);
+    await loadPokemons();
+  };
+
   useEffect(() => {
     loadPokemons()
   }, [])
@@ -87,6 +96,7 @@ const AdminPanel = () => {
             <div className='item1_R_DOWN'>
               {selectedPokemon ? (
                 <>
+                <button onClick={handleDeletePokemon}>del</button>
                   <p className='HEIGTH'>H: {selectedPokemon.pokeOverview.height}</p> <p className='WEIGTH'>W: {selectedPokemon.pokeOverview.weight}</p>
 
                   <p className='T1'>T: {selectedPokemon.pokeOverview.types[0].toUpperCase()}</p>
@@ -95,6 +105,7 @@ const AdminPanel = () => {
                 </>
               ) : (
                 <>
+              
                   <p className='HEIGTH'>H: </p>
                   <p className='WEIGTH'>W: </p>
 
