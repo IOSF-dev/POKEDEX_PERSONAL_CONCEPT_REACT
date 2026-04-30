@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const connectDB = require("./src/models/db.js");
+const connectDB = require("./src/DB/db.js");
 const pokemonRoutes = require("./src/routes/pokemonRoutes.js");
 
 const trainerRoutes = require("./src/routes/trainerRoutes");

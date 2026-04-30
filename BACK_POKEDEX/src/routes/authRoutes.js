@@ -2,7 +2,7 @@ const express = require("express");   /// Libreria de express (hablame en expres
 const router = express.Router(); 
 
 const { verifyToken } = require ("../middlewares/auth")
-const { createAccountController, loginAdmin } =require("../controllers/AuthController.js");
+const { createAccountController, loginAdmin, getTokenController } =require("../controllers/AuthController.js");
 
 
 //ok postman

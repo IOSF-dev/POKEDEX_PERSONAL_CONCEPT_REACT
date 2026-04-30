@@ -1,5 +1,5 @@
-const Admin = require("../models/admin.js");
-const Pokemon = require("../models/pokemon.js");
+const Admin = require("../models/adminModel.js");
+const Pokemon = require("../models/pokemonModel.js");
 ///controllers los veo ok para el ADMIN-PANEL
 const getEveryPokemon = async (req, res) => {
   try {
